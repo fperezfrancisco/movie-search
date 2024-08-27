@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Home Page | by FJP</title>
+  </head>
+  <body>
+    <header class="mainHeader homeHeader flex">
+      <nav class="mainNavBar flex">
+        <span class="logoContainer flex">
+          <a href="home.html" class="navLink">
+           <img
+            src="assets/popcorn-imgs/popcornBucket.png"
+            alt="popcorn bucket"
+            class="movieLogoImg"
+          />
+          Movie Search</span
+        > 
+          </a>
+          
+        <ul class="navList flex noList">
+          <li class="navLi flex">
+            <a href="home.html" class="navLink" id="homeLink">Home</a>
+          </li>
+          <li class="navLi flex">
+            <a href="index.html" class="navLink" id="searchLink"
+              >Find your Movie</a
+            >
+          </li>
+          <li class="navLi flex">
+            <button class="contactBtn" id="contactBtn">Contact</button>
+          </li>
+        </ul>
+        <span class="mobileMenu flex" id="mobileMenu"><i class="bx bx-menu"></i></span>
+        <div class="mobileMenuBlock flexColumn" id="menuBlock">
+          <ul class="navList flexColumn noList">
+            <i class='bx bx-x-circle' id="closeMenu"></i>
+            <li class="navLi flex">
+              <a href="home.html" class="navLink" id="homeLink">Home</a>
+            </li>
+            <li class="navLi flex">
+              <a href="index.html" class="navLink" id="searchLink"
+                >Find your Movie</a
+              >
+            </li>
+            <li class="navLi flex">
+              <button class="contactBtn" id="contactBtn">Contact</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="mainContainer homeMain flexColumn">
+      <section class="pageSection homeHeroSection flexColumn">
+        <h1 class="mainTitle">
+          We never fail to help you find the most popular,
+          <span class="specialText">Poppin</span> films here!
+        </h1>
+        <div class="searchBox flexColumn">
+          <label for="mainSearch" class="searchLabel" id="searchBtn"
+            ><i class="bx bx-search"></i
+          ></label>
+          <input
+            type="search"
+            name="mainSearch"
+            id="mainSearch"
+            class="searchInput pageInput"
+            placeholder="Search by Name, Category, or Keyword"
+          />
+        </div>
+      </section>
+      <div class="popcornBucketBox decorationBox flex">
+        <img
+          src="assets/popcorn-imgs/popcornBucket.png"
+          alt="Popcorn Bucket"
+          class="popcornBucketHeroImg"
+        />
+      </div>
+    </main>
+    <div class="bkgPopcorn decorationBox flex"></div>
+    <script src="homeScript.js"></script>
+  </body>
+</html>
