@@ -4,6 +4,8 @@ const searchBtn = document.getElementById("searchBtn");
 const mainSearchInput = document.getElementById("mainSearch");
 
 mainSearchInput.addEventListener("keypress", (e) => {
+  localStorage.removeItem("searchItem");
+  localStorage.removeItem("homeSearch");
   if (e.key === "Enter") {
     e.preventDefault();
     //execute search
@@ -13,10 +15,9 @@ mainSearchInput.addEventListener("keypress", (e) => {
       alert("Please enter something to be searched!");
     } else {
       //switch to index page
+      localStorage.setItem("homeSearch", "Yes");
+      localStorage.setItem("searchItem", searchValue);
       location.href = "index.html";
-      //reset search container results
-      resetMovies();
-      return searchMovieTitle(searchValue);
     }
   }
 });
@@ -26,9 +27,13 @@ searchBtn.addEventListener("click", () => {
   //execute search
   let searchValue = mainSearchInput.value;
   console.log(searchValue);
+  localStorage.removeItem("searchItem");
+  localStorage.removeItem("homeSearch");
   if (!searchValue) {
     alert("Please enter something to be searched!");
   } else {
+    localStorage.setItem("homeSearch", "Yes");
+    localStorage.setItem("searchItem", searchValue);
     //switch to index page
     location.href = "index.html";
     resetMovies();

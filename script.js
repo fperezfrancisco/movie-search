@@ -312,3 +312,38 @@ closeMenu.addEventListener("click", () => {
   //close menu
   menuBlock.classList.remove("open");
 });
+
+const searchHome = localStorage.getItem("homeSearch");
+console.log(searchHome);
+if (searchHome) {
+  const homeSearchValue = localStorage.getItem("searchItem");
+  resetMovies();
+  writeLoadBox();
+  loadBkg.style.visibility = "visible";
+  loadBar.style.visibility = "visible";
+  loadBox1.style.display = "flex";
+  loadBox2.style.display = "flex";
+  loadBox3.style.display = "flex";
+  //execute search
+  let searchValue = homeSearchValue;
+  console.log(searchValue);
+  setTimeout(() => {
+    if (!searchValue) {
+      loadBkg.style.visibility = "hidden";
+      loadBar.style.visibility = "hidden";
+      loadBox1.style.display = "none";
+      loadBox2.style.display = "none";
+      loadBox3.style.display = "none";
+      alert("Please enter something to be searched!");
+    } else {
+      loadBkg.style.visibility = "hidden";
+      loadBar.style.visibility = "hidden";
+      loadBox1.style.display = "none";
+      loadBox2.style.display = "none";
+      loadBox3.style.display = "none";
+      resetMovies();
+      localStorage.clear();
+      return searchMovieTitle(searchValue);
+    }
+  }, 3000);
+}
